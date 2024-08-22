@@ -310,7 +310,7 @@ class SimpleLay extends PluginBase {
         $pk->syncedProperties = new PropertySyncData([], []);
 
         $link = new SetActorLinkPacket();
-        $link->link = new EntityLink($eid, $player->getId(), EntityLink::TYPE_RIDER, true, true);
+        $link->link = new EntityLink($eid, $player->getId(), EntityLink::TYPE_RIDER, true, true, 0.0,);
         $player->getNetworkProperties()->setGenericFlag(EntityMetadataFlags::RIDING, true);
 
         NetworkBroadcastUtils::broadcastPackets($viewers, [$pk, $link]);
